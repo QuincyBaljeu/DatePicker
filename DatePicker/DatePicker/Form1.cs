@@ -16,5 +16,11 @@ namespace DatePicker
         {
             InitializeComponent();
         }
+
+        private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+            Console.WriteLine(DateTimePickerField.Value);
+            Console.ReadLine();
+        }
     }
 }

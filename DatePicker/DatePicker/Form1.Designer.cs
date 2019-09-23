@@ -28,13 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.DateTimePickerField = new System.Windows.Forms.DateTimePicker();
+            this.SuspendLayout();
+            // 
+            // DateTimePickerField
+            // 
+            this.DateTimePickerField.Location = new System.Drawing.Point(12, 12);
+            this.DateTimePickerField.Name = "DateTimePickerField";
+            this.DateTimePickerField.Size = new System.Drawing.Size(200, 20);
+            this.DateTimePickerField.TabIndex = 0;
+            this.DateTimePickerField.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(258, 49);
+            this.Controls.Add(this.DateTimePickerField);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+
         }
 
         #endregion
+
+        private System.Windows.Forms.DateTimePicker DateTimePickerField;
     }
 }
 
