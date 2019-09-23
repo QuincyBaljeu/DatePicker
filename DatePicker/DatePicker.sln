@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29215.179
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DatePicker", "DatePicker\DatePicker.csproj", "{EC3E6B69-6E31-4072-9CB9-2CF19997F135}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Server", "Server\Server.csproj", "{C8995ABF-37D2-4701-B83C-A6ACF3D8C0CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{EC3E6B69-6E31-4072-9CB9-2CF19997F135}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EC3E6B69-6E31-4072-9CB9-2CF19997F135}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EC3E6B69-6E31-4072-9CB9-2CF19997F135}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8995ABF-37D2-4701-B83C-A6ACF3D8C0CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8995ABF-37D2-4701-B83C-A6ACF3D8C0CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8995ABF-37D2-4701-B83C-A6ACF3D8C0CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8995ABF-37D2-4701-B83C-A6ACF3D8C0CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
