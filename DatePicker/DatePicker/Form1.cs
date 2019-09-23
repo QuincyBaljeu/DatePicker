@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -32,7 +33,7 @@ namespace DatePicker
 
         private void AddDateButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(NameTextBox.Text + ", chose: " + DateTimePickerField.Value);
+            ServerUtil.WriteTextMessage(Client.GetStream(), "test");
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
