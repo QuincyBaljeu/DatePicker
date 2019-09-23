@@ -22,5 +22,15 @@ namespace DatePicker
             Console.WriteLine(DateTimePickerField.Value);
             Console.ReadLine();
         }
+
+        private void NameTextBox_Click(object sender, EventArgs e)
+        {
+            NameTextBox.Text = "";
+        }
+
+        private void AddDateButton_Click(object sender, EventArgs e)
+        {
+            Console.WriteLine(NameTextBox.Text + ", chose: " + DateTimePickerField.Value);
+        }
     }
 }

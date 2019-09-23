@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.DateTimePickerField = new System.Windows.Forms.DateTimePicker();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.NameTextBox = new System.Windows.Forms.TextBox();
+            this.AddDateButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // DateTimePickerField
@@ -41,34 +41,34 @@
             this.DateTimePickerField.TabIndex = 0;
             this.DateTimePickerField.ValueChanged += new System.EventHandler(this.DateTimePicker1_ValueChanged);
             // 
-            // textBox1
+            // NameTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(11, 11);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(200, 20);
-            this.textBox1.TabIndex = 1;
-            this.textBox1.Text = "name";
-
+            this.NameTextBox.Location = new System.Drawing.Point(11, 11);
+            this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.NameTextBox.Name = "NameTextBox";
+            this.NameTextBox.Size = new System.Drawing.Size(200, 20);
+            this.NameTextBox.TabIndex = 1;
+            this.NameTextBox.Text = "   name";
+            this.NameTextBox.Click += new System.EventHandler(this.NameTextBox_Click);
             // 
-            // button1
+            // AddDateButton
             // 
-            this.button1.Location = new System.Drawing.Point(11, 59);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 19);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "add date";
-            this.button1.UseVisualStyleBackColor = true;
-
+            this.AddDateButton.Location = new System.Drawing.Point(11, 59);
+            this.AddDateButton.Margin = new System.Windows.Forms.Padding(2);
+            this.AddDateButton.Name = "AddDateButton";
+            this.AddDateButton.Size = new System.Drawing.Size(88, 20);
+            this.AddDateButton.TabIndex = 2;
+            this.AddDateButton.Text = "add date";
+            this.AddDateButton.UseVisualStyleBackColor = true;
+            this.AddDateButton.Click += new System.EventHandler(this.AddDateButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(234, 197);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.AddDateButton);
+            this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.DateTimePickerField);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -80,8 +80,8 @@
         #endregion
 
         private System.Windows.Forms.DateTimePicker DateTimePickerField;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox NameTextBox;
+        private System.Windows.Forms.Button AddDateButton;
     }
 }
 
