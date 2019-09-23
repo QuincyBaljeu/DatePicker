@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,6 +13,7 @@ namespace DatePicker
 {
     public partial class Form1 : Form
     {
+        TcpClient Client;
         public Form1()
         {
             InitializeComponent();
@@ -31,6 +33,11 @@ namespace DatePicker
         private void AddDateButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine(NameTextBox.Text + ", chose: " + DateTimePickerField.Value);
+        }
+
+        private void ConnectButton_Click(object sender, EventArgs e)
+        {
+            Client = new TcpClient("127.0.0.1", 6666);
         }
     }
 }

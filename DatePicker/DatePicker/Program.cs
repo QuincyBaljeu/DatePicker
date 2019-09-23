@@ -15,7 +15,7 @@ namespace DatePicker
         [STAThread]
         static void Main()
         {
-            TcpClient client = new TcpClient("127.0.0.1", 6666);
+    
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
