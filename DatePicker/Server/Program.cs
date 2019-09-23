@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using System.Net;
 using System.Net.Sockets;
+using System.Threading;
 
 namespace Server
 {
@@ -29,8 +30,20 @@ namespace Server
             {
                 TcpClient client = TcpListener.AcceptTcpClient();
                 Console.WriteLine("Connected!");
-                
+                Thread thread = new Thread(HandleClient);
+                thread.Start(client);
+            }
 
+        }
+
+        public static void HandleClient(object obj)
+        {
+            TcpClient handledClient = obj as TcpClient;
+            NetworkStream networkStream = handledClient.GetStream();
+
+            while (true)
+            {
+                Console.WriteLine(ServerUtil.ReadTextMessage(networkStream));
             }
 
         }

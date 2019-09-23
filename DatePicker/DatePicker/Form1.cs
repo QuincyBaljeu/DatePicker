@@ -33,7 +33,7 @@ namespace DatePicker
 
         private void AddDateButton_Click(object sender, EventArgs e)
         {
-            ServerUtil.WriteTextMessage(Client.GetStream(), "test");
+            ServerUtil.WriteTextMessage(Client.GetStream(), NameTextBox.Text +" " + DateTimePickerField.Value);
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
