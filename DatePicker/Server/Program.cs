@@ -11,7 +11,7 @@ using System.Threading;
 namespace Server
 {
     class Program
-    {
+    { 
         static void Main(string[] args)
         {
             /*
@@ -36,6 +36,8 @@ namespace Server
 
         }
 
+        
+
         public static void HandleClient(object obj)
         {
             TcpClient handledClient = obj as TcpClient;
@@ -44,10 +46,8 @@ namespace Server
             while (true)
             {
                 Console.WriteLine(ServerUtil.ReadTextMessage(networkStream));
+
             }
-
         }
-
-        
     }
 }
