@@ -1,6 +1,6 @@
 ﻿namespace DatePicker
 {
-    partial class Form1
+    partial class Picker
     {
         /// <summary>
         /// Required designer variable.
