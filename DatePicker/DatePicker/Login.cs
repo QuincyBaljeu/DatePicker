@@ -16,5 +16,12 @@ namespace DatePicker
         {
             InitializeComponent();
         }
+
+        private void Btn_AddAvailability_MouseClick(object sender, MouseEventArgs e)
+        {
+            Picker picker = new Picker();
+            picker.Show();
+            this.Hide();
+        }
     }
 }

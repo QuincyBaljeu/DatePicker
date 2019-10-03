@@ -30,10 +30,10 @@
         {
             this.Txt_EventName = new System.Windows.Forms.TextBox();
             this.Grp_NewEvent = new System.Windows.Forms.GroupBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.Txt_AvailabilityName = new System.Windows.Forms.TextBox();
-            this.Btn_AddAvailability = new System.Windows.Forms.Button();
             this.Btn_CreateEvent = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.Btn_AddAvailability = new System.Windows.Forms.Button();
+            this.Txt_AvailabilityName = new System.Windows.Forms.TextBox();
             this.Grp_NewEvent.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +58,15 @@
             this.Grp_NewEvent.TabStop = false;
             this.Grp_NewEvent.Text = "New Event";
             // 
+            // Btn_CreateEvent
+            // 
+            this.Btn_CreateEvent.Location = new System.Drawing.Point(176, 19);
+            this.Btn_CreateEvent.Name = "Btn_CreateEvent";
+            this.Btn_CreateEvent.Size = new System.Drawing.Size(125, 20);
+            this.Btn_CreateEvent.TabIndex = 2;
+            this.Btn_CreateEvent.Text = "Create event";
+            this.Btn_CreateEvent.UseVisualStyleBackColor = true;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Btn_AddAvailability);
@@ -69,15 +78,6 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Existing event";
             // 
-            // Txt_AvailabilityName
-            // 
-            this.Txt_AvailabilityName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Txt_AvailabilityName.Location = new System.Drawing.Point(6, 19);
-            this.Txt_AvailabilityName.Name = "Txt_AvailabilityName";
-            this.Txt_AvailabilityName.Size = new System.Drawing.Size(164, 20);
-            this.Txt_AvailabilityName.TabIndex = 0;
-            this.Txt_AvailabilityName.Text = "Name";
-            // 
             // Btn_AddAvailability
             // 
             this.Btn_AddAvailability.Location = new System.Drawing.Point(176, 19);
@@ -86,15 +86,16 @@
             this.Btn_AddAvailability.TabIndex = 1;
             this.Btn_AddAvailability.Text = "Add Availability";
             this.Btn_AddAvailability.UseVisualStyleBackColor = true;
+            this.Btn_AddAvailability.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Btn_AddAvailability_MouseClick);
             // 
-            // Btn_CreateEvent
+            // Txt_AvailabilityName
             // 
-            this.Btn_CreateEvent.Location = new System.Drawing.Point(176, 19);
-            this.Btn_CreateEvent.Name = "Btn_CreateEvent";
-            this.Btn_CreateEvent.Size = new System.Drawing.Size(125, 20);
-            this.Btn_CreateEvent.TabIndex = 2;
-            this.Btn_CreateEvent.Text = "Create event";
-            this.Btn_CreateEvent.UseVisualStyleBackColor = true;
+            this.Txt_AvailabilityName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.Txt_AvailabilityName.Location = new System.Drawing.Point(6, 19);
+            this.Txt_AvailabilityName.Name = "Txt_AvailabilityName";
+            this.Txt_AvailabilityName.Size = new System.Drawing.Size(164, 20);
+            this.Txt_AvailabilityName.TabIndex = 0;
+            this.Txt_AvailabilityName.Text = "Name";
             // 
             // Login
             // 
