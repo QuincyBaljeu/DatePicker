@@ -66,6 +66,7 @@
             this.Btn_CreateEvent.TabIndex = 2;
             this.Btn_CreateEvent.Text = "Create event";
             this.Btn_CreateEvent.UseVisualStyleBackColor = true;
+            this.Btn_CreateEvent.Click += new System.EventHandler(this.Btn_CreateEvent_Click);
             // 
             // groupBox1
             // 

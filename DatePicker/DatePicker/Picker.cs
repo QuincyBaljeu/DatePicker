@@ -18,6 +18,7 @@ namespace DatePicker
         public Picker()
         {
             InitializeComponent();
+            Client = new TcpClient("127.0.0.1", 6666);
         }
 
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
@@ -31,17 +32,13 @@ namespace DatePicker
             NameTextBox.Text = "";
         }
 
-        private void AddDateButton_Click(object sender, EventArgs e)
+        private void Btn_AddDate_Click(object sender, EventArgs e)
         {
-            if (NameTextBox.Text != null && DateTimePickerField.Value != null)
+            if (NameTextBox.Text != null && DateTimePickerField.Value != null && Client!=null)
             {
                 ServerUtil.WriteTextMessage(Client.GetStream(), NameTextBox.Text + " " + DateTimePickerField.Value);
             }
         }
 
-        private void ConnectButton_Click(object sender, EventArgs e)
-        {
-            Client = new TcpClient("127.0.0.1", 6666);
-        }
     }
 }
