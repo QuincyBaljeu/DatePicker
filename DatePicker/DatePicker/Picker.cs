@@ -1,4 +1,5 @@
-﻿using System;
+using Server;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -11,10 +12,10 @@ using System.Windows.Forms;
 
 namespace DatePicker
 {
-    public partial class Form1 : Form
+    public partial class Picker : Form
     {
         TcpClient Client;
-        public Form1()
+        public Picker()
         {
             InitializeComponent();
         }
@@ -32,7 +33,9 @@ namespace DatePicker
 
         private void AddDateButton_Click(object sender, EventArgs e)
         {
-            Console.WriteLine(NameTextBox.Text + ", chose: " + DateTimePickerField.Value);
+            ServerUtil.WriteTextMessage(Client.GetStream(), NameTextBox.Text + " " + DateTimePickerField.Value);
+     
+
         }
 
         private void ConnectButton_Click(object sender, EventArgs e)
