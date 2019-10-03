@@ -17,8 +17,9 @@ namespace DatePicker
         TcpClient Client;
         public Picker()
         {
-            InitializeComponent();
+            InitializeComponent();   
             Client = new TcpClient("127.0.0.1", 6666);
+            
         }
 
         private void DateTimePicker1_ValueChanged(object sender, EventArgs e)
