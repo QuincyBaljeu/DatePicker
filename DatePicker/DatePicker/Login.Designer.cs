@@ -97,6 +97,7 @@
             this.Txt_AvailabilityName.Size = new System.Drawing.Size(164, 20);
             this.Txt_AvailabilityName.TabIndex = 0;
             this.Txt_AvailabilityName.Text = "Name";
+
             // 
             // Login
             // 
