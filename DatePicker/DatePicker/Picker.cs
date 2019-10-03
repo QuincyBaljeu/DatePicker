@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace DatePicker
 {
-    public partial class Form1 : Form
+    public partial class Picker : Form
     {
         TcpClient Client;
-        public Form1()
+        public Picker()
         {
             InitializeComponent();
         }
