@@ -11,15 +11,17 @@ using System.Threading;
 namespace Server
 {
     class Program
-    { 
+    {
+        public static List<Event> Events;
+
         static void Main(string[] args)
         {
             /*
              * Stijn is een pannenkoek
              */
 
-
             IPAddress LocalHost;
+            Events = new List<Event>();
 
             IPAddress.TryParse("127.0.0.1", out LocalHost);
             TcpListener TcpListener = new TcpListener(LocalHost, 6666);
@@ -61,14 +63,7 @@ namespace Server
             }
 
         }
-
-        public static void HandleEvent(object obj)
-        {
-            TcpClient HandledClient = obj as TcpClient;
-            NetworkStream networkStream = HandledClient.GetStream();
-        }
-
-       
+        
         public static void HandlePicker(object obj)
         {
             TcpClient HandledClient = obj as TcpClient;
@@ -77,6 +72,18 @@ namespace Server
             Console.WriteLine(ServerUtil.ReadTextMessage(NetworkStream));
 
         }
-       
+
+        public static void HandleEvent(object obj)
+        {
+            TcpClient HandledClient = obj as TcpClient;
+            NetworkStream NetworkStream = HandledClient.GetStream();
+
+            String EventName = ServerUtil.ReadTextMessage(NetworkStream);
+            Events.Add(new Event(EventName));
+
+            
+
+        }
+
     }
 }
