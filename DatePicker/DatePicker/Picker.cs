@@ -35,12 +35,12 @@ namespace DatePicker
 
         private void Btn_AddDate_Click(object sender, EventArgs e)
         {
-            /*
+          
             if (NameTextBox.Text != null && DateTimePickerField.Value != null && Client!=null)
             {
-               
+                ServerUtil.WriteTextMessage(Client.GetStream(), String.Format("{0}-{1}", NameTextBox.Text, DateTimePickerField.Value));
             }
-            */
+           
         }
 
     }

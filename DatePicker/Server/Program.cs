@@ -41,15 +41,19 @@ namespace Server
         public static void HandleClient(object obj)
         {
             TcpClient handledClient = obj as TcpClient;
-            NetworkStream networkStream = handledClient.GetStream();
+            NetworkStream NetworkStream = handledClient.GetStream();
 
-            if (ServerUtil.ReadTextMessage(networkStream) == "Event")
-            {
-                HandleEvent(obj);
-            }
-            else if(ServerUtil.ReadTextMessage(networkStream) == "Picker")
+
+            String ClientType = ServerUtil.ReadTextMessage(NetworkStream);
+            Console.WriteLine(ClientType);
+
+            if(ClientType == "Picker")
             {
                 HandlePicker(obj);
+            }
+            else if(ClientType == "Event")
+            {
+                HandleEvent(obj);
             }
             else
             {
@@ -60,13 +64,19 @@ namespace Server
 
         public static void HandleEvent(object obj)
         {
-
+            TcpClient HandledClient = obj as TcpClient;
+            NetworkStream networkStream = HandledClient.GetStream();
         }
 
+       
         public static void HandlePicker(object obj)
         {
+            TcpClient HandledClient = obj as TcpClient;
+            NetworkStream NetworkStream = HandledClient.GetStream();
 
+            Console.WriteLine(ServerUtil.ReadTextMessage(NetworkStream));
 
         }
+       
     }
 }
