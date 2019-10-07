@@ -21,5 +21,11 @@ namespace DatePicker
             Client = new TcpClient("127.0.0.1", 6666);
             ServerUtil.WriteTextMessage(Client.GetStream(), "Event");
         }
+
+        private void TextBox1_Click(Object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox1.ForeColor = Color.Black;
+        }
     }
 }

@@ -41,28 +41,33 @@
             // Txt_EventName
             // 
             this.Txt_EventName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Txt_EventName.Location = new System.Drawing.Point(6, 19);
+            this.Txt_EventName.Location = new System.Drawing.Point(8, 23);
+            this.Txt_EventName.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_EventName.Name = "Txt_EventName";
-            this.Txt_EventName.Size = new System.Drawing.Size(164, 20);
+            this.Txt_EventName.Size = new System.Drawing.Size(217, 22);
             this.Txt_EventName.TabIndex = 0;
             this.Txt_EventName.Text = "Event Name";
+            this.Txt_EventName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txt_EventName_MouseClick);
             // 
             // Grp_NewEvent
             // 
             this.Grp_NewEvent.Controls.Add(this.Btn_CreateEvent);
             this.Grp_NewEvent.Controls.Add(this.Txt_EventName);
-            this.Grp_NewEvent.Location = new System.Drawing.Point(12, 12);
+            this.Grp_NewEvent.Location = new System.Drawing.Point(16, 15);
+            this.Grp_NewEvent.Margin = new System.Windows.Forms.Padding(4);
             this.Grp_NewEvent.Name = "Grp_NewEvent";
-            this.Grp_NewEvent.Size = new System.Drawing.Size(307, 52);
+            this.Grp_NewEvent.Padding = new System.Windows.Forms.Padding(4);
+            this.Grp_NewEvent.Size = new System.Drawing.Size(409, 64);
             this.Grp_NewEvent.TabIndex = 2;
             this.Grp_NewEvent.TabStop = false;
             this.Grp_NewEvent.Text = "New Event";
             // 
             // Btn_CreateEvent
             // 
-            this.Btn_CreateEvent.Location = new System.Drawing.Point(176, 19);
+            this.Btn_CreateEvent.Location = new System.Drawing.Point(235, 23);
+            this.Btn_CreateEvent.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_CreateEvent.Name = "Btn_CreateEvent";
-            this.Btn_CreateEvent.Size = new System.Drawing.Size(125, 20);
+            this.Btn_CreateEvent.Size = new System.Drawing.Size(167, 25);
             this.Btn_CreateEvent.TabIndex = 2;
             this.Btn_CreateEvent.Text = "Create event";
             this.Btn_CreateEvent.UseVisualStyleBackColor = true;
@@ -72,18 +77,21 @@
             // 
             this.groupBox1.Controls.Add(this.Btn_AddAvailability);
             this.groupBox1.Controls.Add(this.Txt_AvailabilityName);
-            this.groupBox1.Location = new System.Drawing.Point(12, 68);
+            this.groupBox1.Location = new System.Drawing.Point(16, 84);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(307, 52);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(409, 64);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Existing event";
             // 
             // Btn_AddAvailability
             // 
-            this.Btn_AddAvailability.Location = new System.Drawing.Point(176, 19);
+            this.Btn_AddAvailability.Location = new System.Drawing.Point(235, 23);
+            this.Btn_AddAvailability.Margin = new System.Windows.Forms.Padding(4);
             this.Btn_AddAvailability.Name = "Btn_AddAvailability";
-            this.Btn_AddAvailability.Size = new System.Drawing.Size(125, 20);
+            this.Btn_AddAvailability.Size = new System.Drawing.Size(167, 25);
             this.Btn_AddAvailability.TabIndex = 1;
             this.Btn_AddAvailability.Text = "Add Availability";
             this.Btn_AddAvailability.UseVisualStyleBackColor = true;
@@ -92,20 +100,23 @@
             // Txt_AvailabilityName
             // 
             this.Txt_AvailabilityName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Txt_AvailabilityName.Location = new System.Drawing.Point(6, 19);
+            this.Txt_AvailabilityName.Location = new System.Drawing.Point(8, 23);
+            this.Txt_AvailabilityName.Margin = new System.Windows.Forms.Padding(4);
             this.Txt_AvailabilityName.Name = "Txt_AvailabilityName";
-            this.Txt_AvailabilityName.Size = new System.Drawing.Size(164, 20);
+            this.Txt_AvailabilityName.Size = new System.Drawing.Size(217, 22);
             this.Txt_AvailabilityName.TabIndex = 0;
             this.Txt_AvailabilityName.Text = "Name";
+            this.Txt_AvailabilityName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txt_AvailabilityName_MouseClick);
 
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 142);
+            this.ClientSize = new System.Drawing.Size(444, 175);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Grp_NewEvent);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Login";
             this.Text = "Login";
             this.Grp_NewEvent.ResumeLayout(false);

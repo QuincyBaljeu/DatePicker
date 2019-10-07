@@ -32,5 +32,19 @@ namespace DatePicker
             EventInfo.Show();
             this.Hide();
         }
+
+        private void Txt_EventName_MouseClick(Object sender, MouseEventArgs e)
+        {
+            Txt_EventName.Clear();
+            Txt_EventName.ForeColor = Color.Black;
+        }
+
+        private void Txt_AvailabilityName_MouseClick(Object sender, MouseEventArgs e)
+        {
+            Txt_AvailabilityName.Clear();
+            Txt_AvailabilityName.ForeColor = Color.Purple;
+        }
+
+       
     }
 }
