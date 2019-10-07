@@ -22,10 +22,15 @@ namespace DatePicker
             ServerUtil.WriteTextMessage(Client.GetStream(), "Event");
         }
 
-        private void TextBox1_Click(Object sender, EventArgs e)
+        private void Txt_EventName_Click(object sender, EventArgs e)
         {
-            textBox1.Clear();
-            textBox1.ForeColor = Color.Black;
+            Txt_EventName.Clear();
+            Txt_EventName.ForeColor = Color.Black;
+        }
+
+        private void Btn_SetEventName_Click(object sender, EventArgs e)
+        {
+            ServerUtil.WriteTextMessage(Client.GetStream(), Txt_EventName.Text);
         }
     }
 }

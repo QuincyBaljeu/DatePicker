@@ -81,7 +81,13 @@ namespace Server
             String EventName = ServerUtil.ReadTextMessage(NetworkStream);
             Events.Add(new Event(EventName));
 
-            
+            foreach(Event forEvent in Events)
+            {
+                Console.WriteLine("Event found");
+                Console.WriteLine(forEvent.EventName);
+            }
+
+            Console.WriteLine("Yeet");
 
         }
 
