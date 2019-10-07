@@ -43,11 +43,30 @@ namespace Server
             TcpClient handledClient = obj as TcpClient;
             NetworkStream networkStream = handledClient.GetStream();
 
-            while (true)
+            if (ServerUtil.ReadTextMessage(networkStream) == "Event")
             {
-                Console.WriteLine(ServerUtil.ReadTextMessage(networkStream));
-
+                HandleEvent(obj);
             }
+            else if(ServerUtil.ReadTextMessage(networkStream) == "Picker")
+            {
+                HandlePicker(obj);
+            }
+            else
+            {
+                Console.WriteLine("Error identifying client");
+            }
+
+        }
+
+        public static void HandleEvent(object obj)
+        {
+
+        }
+
+        public static void HandlePicker(object obj)
+        {
+
+
         }
     }
 }
