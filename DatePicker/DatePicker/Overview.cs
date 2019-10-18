@@ -4,11 +4,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace DatePicker
 {
@@ -29,7 +31,11 @@ namespace DatePicker
 
             String Datareceived = ServerUtil.ReadTextMessage(Client.GetStream());
 
-            Console.WriteLine("yeeeeeet" + Datareceived);
+            Console.WriteLine(Datareceived);
+            Console.ReadLine();
+
+            String Filepath = "C:/Users/qgame/Desktop/eventdata.txt";
+            File.WriteAllText(Filepath, Datareceived);
         }
 
         private void EventNameInfo_Click(object sender, EventArgs e)

@@ -142,10 +142,6 @@ namespace Server
             NetworkStream NetworkStream = HandledClient.GetStream();
 
             String EventToSearch = ServerUtil.ReadTextMessage(NetworkStream);
-            NetworkStream.Flush();
-
-            ServerUtil.WriteTextMessage(NetworkStream, "Hallo");
-            // Console.WriteLine(EventToSearch);
 
             IEnumerable<Event> EventsFound = from e in Events
                                              where e.EventName == EventToSearch
@@ -155,7 +151,7 @@ namespace Server
 
             foreach (KeyValuePair<String, DateTime> entry in EventsFound.ToList()[0].DatesPicked)
             {
-                DataToSend += String.Format("{0}, {1} -", entry.Key, entry.Value);
+                DataToSend += String.Format("{0}-{1} -", entry.Key, entry.Value);
             }
 
             Console.WriteLine(DataToSend);
