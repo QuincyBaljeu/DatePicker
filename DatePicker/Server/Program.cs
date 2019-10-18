@@ -80,17 +80,6 @@ namespace Server
             String PickerName = Responses[1];
             String DatePicked = Responses[2];
 
-            Console.WriteLine(EventNamePicked);
-
-            if (Events.ToList().Count == 0)
-            {
-                Console.WriteLine("NO___");
-            }
-            else
-            {
-                Console.WriteLine("YES____");
-            }
-
             /*
             IEnumerable<Event> EventsFound = from e in Events
                                              where e.EventName == EventNamePicked
@@ -112,6 +101,8 @@ namespace Server
 
         public static void HandleEvent(object obj)
         {
+            Console.WriteLine("Handling event");
+
             TcpClient HandledClient = obj as TcpClient;
             NetworkStream NetworkStream = HandledClient.GetStream();
 
@@ -123,9 +114,6 @@ namespace Server
                 Console.WriteLine("Event found");
                 Console.WriteLine(forEvent.EventName);
             }
-
-            Console.WriteLine("Yeet");
-
         }
 
     }

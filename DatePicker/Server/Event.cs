@@ -16,7 +16,7 @@ namespace Server
 
         public Event(String eventName)
         {
-            this.EventName = EventName;
+            this.eventName = eventName;
             DatesPicked = new Dictionary<string, DateTime>();
         }
 
