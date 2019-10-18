@@ -38,7 +38,5 @@ namespace DatePicker
             Txt_AvailabilityName.Clear();
             Txt_AvailabilityName.ForeColor = Color.Black;
         }
-
-       
     }
 }
