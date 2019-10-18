@@ -34,8 +34,8 @@ namespace DatePicker
             Console.WriteLine(Datareceived);
             Console.ReadLine();
 
-            String Filepath = "C:/Users/qgame/Desktop/eventdata.txt";
-            File.WriteAllText(Filepath, Datareceived);
+            Task Saving = SaveDataToText(Datareceived);
+            Saving.Wait();
         }
 
         private void EventNameInfo_Click(object sender, EventArgs e)
@@ -43,5 +43,24 @@ namespace DatePicker
             EventNameInfo.Text = "";
             EventNameInfo.ForeColor = Color.Black;
         }
+
+        static async Task SaveDataToText(String Data)
+        {
+
+            SaveFileDialog save = new SaveFileDialog();
+
+            save.FileName = "DefaultOutputName.txt";
+
+            if (save.ShowDialog() == DialogResult.OK)
+
+            {
+                StreamWriter writer = new StreamWriter(save.OpenFile());
+                writer.WriteLine(Data);
+                writer.Dispose();
+                writer.Close();
+            }
+
+        }
+        
     }
 }

@@ -151,7 +151,7 @@ namespace Server
 
             foreach (KeyValuePair<String, DateTime> entry in EventsFound.ToList()[0].DatesPicked)
             {
-                DataToSend += String.Format("{0}-{1} -", entry.Key, entry.Value);
+                DataToSend += String.Format("{0}-{1}/", entry.Key, entry.Value);
             }
 
             Console.WriteLine(DataToSend);
