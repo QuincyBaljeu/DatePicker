@@ -31,5 +31,11 @@ namespace DatePicker
 
             Console.WriteLine("yeeeeeet" + Datareceived);
         }
+
+        private void EventNameInfo_Click(object sender, EventArgs e)
+        {
+            EventNameInfo.Text = "";
+            EventNameInfo.ForeColor = Color.Black;
+        }
     }
 }

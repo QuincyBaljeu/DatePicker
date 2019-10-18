@@ -144,6 +144,7 @@ namespace Server
             String EventToSearch = ServerUtil.ReadTextMessage(NetworkStream);
             NetworkStream.Flush();
 
+            ServerUtil.WriteTextMessage(NetworkStream, "Hallo");
             // Console.WriteLine(EventToSearch);
 
             IEnumerable<Event> EventsFound = from e in Events
