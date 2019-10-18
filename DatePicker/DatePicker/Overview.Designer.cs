@@ -50,6 +50,7 @@
             this.EventNameInfo.Size = new System.Drawing.Size(126, 20);
             this.EventNameInfo.TabIndex = 1;
             this.EventNameInfo.Text = "Event name";
+            this.EventNameInfo.Click += new System.EventHandler(this.EventNameInfo_Click);
             // 
             // Overview
             // 

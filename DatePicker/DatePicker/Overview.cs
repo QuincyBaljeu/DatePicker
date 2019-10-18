@@ -29,7 +29,7 @@ namespace DatePicker
 
             String Datareceived = ServerUtil.ReadTextMessage(Client.GetStream());
 
-            Console.WriteLine(Datareceived);
+            Console.WriteLine("yeeeeeet" + Datareceived);
         }
     }
 }

@@ -142,6 +142,7 @@ namespace Server
             NetworkStream NetworkStream = HandledClient.GetStream();
 
             String EventToSearch = ServerUtil.ReadTextMessage(NetworkStream);
+            NetworkStream.Flush();
 
             // Console.WriteLine(EventToSearch);
 
@@ -157,6 +158,8 @@ namespace Server
             }
 
             Console.WriteLine(DataToSend);
+
+            ServerUtil.WriteTextMessage(NetworkStream, DataToSend);
         }
     }
 }
