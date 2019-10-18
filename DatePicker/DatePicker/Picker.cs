@@ -31,6 +31,7 @@ namespace DatePicker
         private void NameTextBox_Click(object sender, EventArgs e)
         {
             NameTextBox.Text = "";
+            NameTextBox.ForeColor = Color.Black;
         }
 
         private void Btn_AddDate_Click(object sender, EventArgs e)
@@ -41,6 +42,12 @@ namespace DatePicker
                 ServerUtil.WriteTextMessage(Client.GetStream(), String.Format("{0}-{1}-{2}",EventNameField.Text, NameTextBox.Text, DateTimePickerField.Value));
             }
            
+        }
+
+        private void EventNameField_Click(object sender, EventArgs e)
+        {
+            EventNameField.Text = "";
+            EventNameField.ForeColor = Color.Black;
         }
     }
 }

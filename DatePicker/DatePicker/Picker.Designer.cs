@@ -72,6 +72,7 @@
             this.EventNameField.Size = new System.Drawing.Size(199, 20);
             this.EventNameField.TabIndex = 3;
             this.EventNameField.Text = "Event name";
+            this.EventNameField.Click += new System.EventHandler(this.EventNameField_Click);
             // 
             // Picker
             // 
