@@ -76,14 +76,38 @@ namespace Server
 
             String[] Responses = ServerUtil.ReadTextMessage(NetworkStream).Split(Seperator, Count, StringSplitOptions.None);
 
-            String EventName = Responses[0];
+            String EventNamePicked = Responses[0];
             String PickerName = Responses[1];
             String DatePicked = Responses[2];
 
-            Console.WriteLine(EventName);
-            Console.WriteLine(PickerName);
-            Console.WriteLine(DatePicked);
+            Console.WriteLine(EventNamePicked);
 
+            if (Events.ToList().Count == 0)
+            {
+                Console.WriteLine("NO___");
+            }
+            else
+            {
+                Console.WriteLine("YES____");
+            }
+
+            /*
+            IEnumerable<Event> EventsFound = from e in Events
+                                             where e.EventName == EventNamePicked
+                                             select e;
+
+             */
+
+           
+            foreach(Event e in Events)
+            {
+                Console.WriteLine(e.EventName);
+                Console.WriteLine(EventNamePicked);
+                if (e.EventName == EventNamePicked){
+                    Console.WriteLine("godzijdank");
+                }
+
+            }
         }
 
         public static void HandleEvent(object obj)
