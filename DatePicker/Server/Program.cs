@@ -80,14 +80,17 @@ namespace Server
             String PickerName = Responses[1];
             String DatePicked = Responses[2];
 
-            /*
+            
             IEnumerable<Event> EventsFound = from e in Events
                                              where e.EventName == EventNamePicked
                                              select e;
 
-             */
 
-           
+            Event EventChosen = EventsFound.ToList()[0];
+            EventChosen.AddDatePicked(PickerName, DateTime.Parse(DatePicked));
+
+            
+           /*
             foreach(Event e in Events)
             {
                 Console.WriteLine(e.EventName);
@@ -97,6 +100,7 @@ namespace Server
                 }
 
             }
+            */
         }
 
         public static void HandleEvent(object obj)
