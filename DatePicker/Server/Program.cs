@@ -69,7 +69,20 @@ namespace Server
             TcpClient HandledClient = obj as TcpClient;
             NetworkStream NetworkStream = HandledClient.GetStream();
 
-            Console.WriteLine(ServerUtil.ReadTextMessage(NetworkStream));
+            //Console.WriteLine(ServerUtil.ReadTextMessage(NetworkStream));
+
+            char[] Seperator = { '-' };
+            Int32 Count = 3;
+
+            String[] Responses = ServerUtil.ReadTextMessage(NetworkStream).Split(Seperator, Count, StringSplitOptions.None);
+
+            String EventName = Responses[0];
+            String PickerName = Responses[1];
+            String DatePicked = Responses[2];
+
+            Console.WriteLine(EventName);
+            Console.WriteLine(PickerName);
+            Console.WriteLine(DatePicked);
 
         }
 

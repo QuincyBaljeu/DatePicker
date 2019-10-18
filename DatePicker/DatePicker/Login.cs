@@ -31,14 +31,6 @@ namespace DatePicker
             EventInfo EventInfo = new EventInfo();
             EventInfo.Show();
             this.Hide();
-        }
-
-        private void Txt_AvailabilityName_MouseClick(Object sender, MouseEventArgs e)
-        {
-            Txt_AvailabilityName.Clear();
-            Txt_AvailabilityName.ForeColor = Color.Black;
-        }
-
-       
+        }    
     }
 }

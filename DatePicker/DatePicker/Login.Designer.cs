@@ -32,7 +32,6 @@
             this.Btn_CreateEvent = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_AddAvailability = new System.Windows.Forms.Button();
-            this.Txt_AvailabilityName = new System.Windows.Forms.TextBox();
             this.Grp_NewEvent.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +59,6 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.Btn_AddAvailability);
-            this.groupBox1.Controls.Add(this.Txt_AvailabilityName);
             this.groupBox1.Location = new System.Drawing.Point(12, 68);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(307, 52);
@@ -70,23 +68,13 @@
             // 
             // Btn_AddAvailability
             // 
-            this.Btn_AddAvailability.Location = new System.Drawing.Point(176, 19);
+            this.Btn_AddAvailability.Location = new System.Drawing.Point(6, 19);
             this.Btn_AddAvailability.Name = "Btn_AddAvailability";
             this.Btn_AddAvailability.Size = new System.Drawing.Size(125, 20);
             this.Btn_AddAvailability.TabIndex = 1;
             this.Btn_AddAvailability.Text = "Add Availability";
             this.Btn_AddAvailability.UseVisualStyleBackColor = true;
             this.Btn_AddAvailability.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Btn_AddAvailability_MouseClick);
-            // 
-            // Txt_AvailabilityName
-            // 
-            this.Txt_AvailabilityName.ForeColor = System.Drawing.SystemColors.InactiveCaption;
-            this.Txt_AvailabilityName.Location = new System.Drawing.Point(6, 19);
-            this.Txt_AvailabilityName.Name = "Txt_AvailabilityName";
-            this.Txt_AvailabilityName.Size = new System.Drawing.Size(164, 20);
-            this.Txt_AvailabilityName.TabIndex = 0;
-            this.Txt_AvailabilityName.Text = "Name";
-            this.Txt_AvailabilityName.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Txt_AvailabilityName_MouseClick);
             // 
             // Login
             // 
@@ -99,7 +87,6 @@
             this.Text = "Login";
             this.Grp_NewEvent.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -109,6 +96,5 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Btn_CreateEvent;
         private System.Windows.Forms.Button Btn_AddAvailability;
-        private System.Windows.Forms.TextBox Txt_AvailabilityName;
     }
 }
