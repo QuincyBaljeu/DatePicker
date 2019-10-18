@@ -38,7 +38,7 @@ namespace Server
 
         }
 
-        
+
 
         public static void HandleClient(object obj)
         {
@@ -49,16 +49,17 @@ namespace Server
             String ClientType = ServerUtil.ReadTextMessage(NetworkStream);
             Console.WriteLine(ClientType);
 
-            if(ClientType == "Picker")
+            if (ClientType == "Picker")
             {
                 Thread t = new Thread(() => HandlePicker(obj));
                 t.Start();
             }
-            else if(ClientType == "Event")
+            else if (ClientType == "Event")
             {
                 Thread t = new Thread(() => HandleEvent(obj));
                 t.Start();
-            }else if(ClientType == "Info")
+            }
+            else if (ClientType == "Info")
             {
 
                 Thread t = new Thread(() => HandleInfo(obj));
@@ -70,7 +71,7 @@ namespace Server
             }
 
         }
-        
+
         public static void HandlePicker(object obj)
         {
             TcpClient HandledClient = obj as TcpClient;
@@ -87,7 +88,7 @@ namespace Server
             String PickerName = Responses[1];
             String DatePicked = Responses[2];
 
-            
+
             IEnumerable<Event> EventsFound = from e in Events
                                              where e.EventName == EventNamePicked
                                              select e;
@@ -101,19 +102,19 @@ namespace Server
             {
                 Console.WriteLine("No events found matching value");
             }
-            
-    
-           /*
-            foreach(Event e in Events)
-            {
-                Console.WriteLine(e.EventName);
-                Console.WriteLine(EventNamePicked);
-                if (e.EventName == EventNamePicked){
-                    Console.WriteLine("godzijdank");
-                }
 
-            }
-            */
+
+            /*
+             foreach(Event e in Events)
+             {
+                 Console.WriteLine(e.EventName);
+                 Console.WriteLine(EventNamePicked);
+                 if (e.EventName == EventNamePicked){
+                     Console.WriteLine("godzijdank");
+                 }
+
+             }
+             */
         }
 
         public static void HandleEvent(object obj)
@@ -126,7 +127,7 @@ namespace Server
             String EventName = ServerUtil.ReadTextMessage(NetworkStream);
             Events.Add(new Event(EventName));
 
-            foreach(Event forEvent in Events)
+            foreach (Event forEvent in Events)
             {
                 Console.WriteLine("Event found");
                 Console.WriteLine(forEvent.EventName);
@@ -142,34 +143,20 @@ namespace Server
 
             String EventToSearch = ServerUtil.ReadTextMessage(NetworkStream);
 
-            foreach(Event e in Events)
-            {
-                Console.WriteLine(e.EventName + " existst");
-                Console.WriteLine("Searched for " + EventToSearch);
-            }
+            // Console.WriteLine(EventToSearch);
 
             IEnumerable<Event> EventsFound = from e in Events
                                              where e.EventName == EventToSearch
                                              select e;
 
-            try
+            string DataToSend = "";
+
+            foreach (KeyValuePair<String, DateTime> entry in EventsFound.ToList()[0].DatesPicked)
             {
-                String DataToSend = "";
-                Event EventChosen = EventsFound.ToList()[0];
-                Console.WriteLine("event found is" + EventChosen);
-                foreach (KeyValuePair<String, DateTime> entry in EventChosen.DatesPicked)
-                {
-                    Console.WriteLine(DataToSend);
-                    DataToSend += entry.ToString();
-                }
-                ServerUtil.WriteTextMessage(NetworkStream, DataToSend);
-            }
-            catch (ArgumentOutOfRangeException)
-            {
-                Console.WriteLine("No events found matching value");
+                DataToSend += String.Format("{0}, {1} -", entry.Key, entry.Value);
             }
 
+            Console.WriteLine(DataToSend);
         }
-
     }
 }

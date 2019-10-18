@@ -31,6 +31,9 @@ namespace DatePicker
         private void Btn_SetEventName_Click(object sender, EventArgs e)
         {
             ServerUtil.WriteTextMessage(Client.GetStream(), Txt_EventName.Text);
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

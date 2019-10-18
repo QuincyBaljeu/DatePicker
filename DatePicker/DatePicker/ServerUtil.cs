@@ -22,7 +22,17 @@ namespace Server
         public static string ReadTextMessage(NetworkStream stream)
         {
             StreamReader streamreader = new StreamReader(stream, encoding);
-            return streamreader.ReadLine();
+            try
+            {
+                return streamreader.ReadLine();
+
+            } catch(IOException e)
+            {
+                Console.WriteLine("User disconnected");
+            }
+
+            return "";
+         
         }
     }
 

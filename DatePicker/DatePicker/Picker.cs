@@ -41,6 +41,11 @@ namespace DatePicker
             {
                 ServerUtil.WriteTextMessage(Client.GetStream(), String.Format("{0}-{1}-{2}",EventNameField.Text, NameTextBox.Text, DateTimePickerField.Value));
             }
+
+            Login login = new Login();
+            login.Show();
+            this.Hide();
+
            
         }
 
