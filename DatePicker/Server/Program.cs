@@ -51,11 +51,13 @@ namespace Server
 
             if(ClientType == "Picker")
             {
-                HandlePicker(obj);
+                Thread t = new Thread(() => HandlePicker(obj));
+                t.Start();
             }
             else if(ClientType == "Event")
             {
-                HandleEvent(obj);
+                Thread t = new Thread(() => HandleEvent(obj));
+                t.Start();
             }
             else
             {
@@ -85,11 +87,17 @@ namespace Server
                                              where e.EventName == EventNamePicked
                                              select e;
 
-
-            Event EventChosen = EventsFound.ToList()[0];
-            EventChosen.AddDatePicked(PickerName, DateTime.Parse(DatePicked));
-
+            try
+            {
+                Event EventChosen = EventsFound.ToList()[0];
+                EventChosen.AddDatePicked(PickerName, DateTime.Parse(DatePicked));
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("No events found matching value");
+            }
             
+    
            /*
             foreach(Event e in Events)
             {

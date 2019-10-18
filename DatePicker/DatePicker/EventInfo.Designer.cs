@@ -69,7 +69,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 122);
+            this.ClientSize = new System.Drawing.Size(308, 98);
             this.Controls.Add(this.groupBox1);
             this.Name = "EventInfo";
             this.Text = "EventInfo";
