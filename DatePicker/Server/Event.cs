@@ -16,13 +16,14 @@ namespace Server
 
         public Event(String eventName)
         {
-            this.EventName = EventName;
-            DatesPicked = new Dictionary<string, DateTime>();
+            this.eventName = eventName;
+            datesPicked = new Dictionary<string, DateTime>();
         }
 
         public void AddDatePicked(String Name, DateTime Date)
         {
             datesPicked.Add(Name, Date);
+            Console.WriteLine(String.Format("Added{0}, {1}", Name, Date));
         }
 
     }

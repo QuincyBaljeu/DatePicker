@@ -69,12 +69,44 @@ namespace Server
             TcpClient HandledClient = obj as TcpClient;
             NetworkStream NetworkStream = HandledClient.GetStream();
 
-            Console.WriteLine(ServerUtil.ReadTextMessage(NetworkStream));
+            //Console.WriteLine(ServerUtil.ReadTextMessage(NetworkStream));
 
+            char[] Seperator = { '-' };
+            Int32 Count = 3;
+
+            String[] Responses = ServerUtil.ReadTextMessage(NetworkStream).Split(Seperator, Count, StringSplitOptions.None);
+
+            String EventNamePicked = Responses[0];
+            String PickerName = Responses[1];
+            String DatePicked = Responses[2];
+
+            
+            IEnumerable<Event> EventsFound = from e in Events
+                                             where e.EventName == EventNamePicked
+                                             select e;
+
+
+            Event EventChosen = EventsFound.ToList()[0];
+            EventChosen.AddDatePicked(PickerName, DateTime.Parse(DatePicked));
+
+            
+           /*
+            foreach(Event e in Events)
+            {
+                Console.WriteLine(e.EventName);
+                Console.WriteLine(EventNamePicked);
+                if (e.EventName == EventNamePicked){
+                    Console.WriteLine("godzijdank");
+                }
+
+            }
+            */
         }
 
         public static void HandleEvent(object obj)
         {
+            Console.WriteLine("Handling event");
+
             TcpClient HandledClient = obj as TcpClient;
             NetworkStream NetworkStream = HandledClient.GetStream();
 
@@ -86,9 +118,6 @@ namespace Server
                 Console.WriteLine("Event found");
                 Console.WriteLine(forEvent.EventName);
             }
-
-            Console.WriteLine("Yeet");
-
         }
 
     }
