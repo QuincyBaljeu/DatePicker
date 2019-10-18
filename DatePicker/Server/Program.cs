@@ -58,6 +58,11 @@ namespace Server
             {
                 Thread t = new Thread(() => HandleEvent(obj));
                 t.Start();
+            }else if(ClientType == "Info")
+            {
+
+                Thread t = new Thread(() => HandleInfo(obj));
+                t.Start();
             }
             else
             {
@@ -126,6 +131,44 @@ namespace Server
                 Console.WriteLine("Event found");
                 Console.WriteLine(forEvent.EventName);
             }
+        }
+
+        public static void HandleInfo(object obj)
+        {
+            Console.WriteLine("Handling info");
+
+            TcpClient HandledClient = obj as TcpClient;
+            NetworkStream NetworkStream = HandledClient.GetStream();
+
+            String EventToSearch = ServerUtil.ReadTextMessage(NetworkStream);
+
+            foreach(Event e in Events)
+            {
+                Console.WriteLine(e.EventName + " existst");
+                Console.WriteLine("Searched for " + EventToSearch);
+            }
+
+            IEnumerable<Event> EventsFound = from e in Events
+                                             where e.EventName == EventToSearch
+                                             select e;
+
+            try
+            {
+                String DataToSend = "";
+                Event EventChosen = EventsFound.ToList()[0];
+                Console.WriteLine("event found is" + EventChosen);
+                foreach (KeyValuePair<String, DateTime> entry in EventChosen.DatesPicked)
+                {
+                    Console.WriteLine(DataToSend);
+                    DataToSend += entry.ToString();
+                }
+                ServerUtil.WriteTextMessage(NetworkStream, DataToSend);
+            }
+            catch (ArgumentOutOfRangeException)
+            {
+                Console.WriteLine("No events found matching value");
+            }
+
         }
 
     }

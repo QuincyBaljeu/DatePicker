@@ -32,8 +32,11 @@
             this.Btn_CreateEvent = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Btn_AddAvailability = new System.Windows.Forms.Button();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.ButtonCheckAvailability = new System.Windows.Forms.Button();
             this.Grp_NewEvent.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // Grp_NewEvent
@@ -76,17 +79,39 @@
             this.Btn_AddAvailability.UseVisualStyleBackColor = true;
             this.Btn_AddAvailability.MouseClick += new System.Windows.Forms.MouseEventHandler(this.Btn_AddAvailability_MouseClick);
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.ButtonCheckAvailability);
+            this.groupBox2.Location = new System.Drawing.Point(12, 126);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(307, 52);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Event info";
+            // 
+            // ButtonCheckAvailability
+            // 
+            this.ButtonCheckAvailability.Location = new System.Drawing.Point(6, 19);
+            this.ButtonCheckAvailability.Name = "ButtonCheckAvailability";
+            this.ButtonCheckAvailability.Size = new System.Drawing.Size(125, 20);
+            this.ButtonCheckAvailability.TabIndex = 5;
+            this.ButtonCheckAvailability.Text = "Check availability";
+            this.ButtonCheckAvailability.UseVisualStyleBackColor = true;
+            this.ButtonCheckAvailability.Click += new System.EventHandler(this.ButtonCheckAvailability_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(333, 142);
+            this.ClientSize = new System.Drawing.Size(329, 191);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.Grp_NewEvent);
             this.Name = "Login";
             this.Text = "Login";
             this.Grp_NewEvent.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -96,5 +121,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button Btn_CreateEvent;
         private System.Windows.Forms.Button Btn_AddAvailability;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.Button ButtonCheckAvailability;
     }
 }

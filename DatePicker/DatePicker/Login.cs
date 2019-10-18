@@ -33,10 +33,11 @@ namespace DatePicker
             this.Hide();
         }
 
-        private void Txt_AvailabilityName_MouseClick(Object sender, MouseEventArgs e)
+        private void ButtonCheckAvailability_Click(object sender, EventArgs e)
         {
-            Txt_AvailabilityName.Clear();
-            Txt_AvailabilityName.ForeColor = Color.Black;
+            Overview overview = new Overview();
+            overview.Show();
+            this.Hide();
         }
     }
 }
