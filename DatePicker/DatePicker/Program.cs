@@ -19,7 +19,7 @@ namespace DatePicker
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Picker());
+            Application.Run(new Login());
         }
     }
 }

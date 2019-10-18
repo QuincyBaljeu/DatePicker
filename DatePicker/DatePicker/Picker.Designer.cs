@@ -30,13 +30,13 @@
         {
             this.DateTimePickerField = new System.Windows.Forms.DateTimePicker();
             this.NameTextBox = new System.Windows.Forms.TextBox();
-            this.AddDateButton = new System.Windows.Forms.Button();
-            this.ConnectButton = new System.Windows.Forms.Button();
+            this.Btn_AddDate = new System.Windows.Forms.Button();
+            this.EventNameField = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // DateTimePickerField
             // 
-            this.DateTimePickerField.Location = new System.Drawing.Point(11, 65);
+            this.DateTimePickerField.Location = new System.Drawing.Point(12, 53);
             this.DateTimePickerField.Name = "DateTimePickerField";
             this.DateTimePickerField.Size = new System.Drawing.Size(200, 20);
             this.DateTimePickerField.TabIndex = 0;
@@ -44,45 +44,46 @@
             // 
             // NameTextBox
             // 
-            this.NameTextBox.Location = new System.Drawing.Point(11, 42);
+            this.NameTextBox.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.NameTextBox.Location = new System.Drawing.Point(12, 30);
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(200, 20);
             this.NameTextBox.TabIndex = 1;
-            this.NameTextBox.Text = "   name";
+            this.NameTextBox.Text = "Name";
             this.NameTextBox.Click += new System.EventHandler(this.NameTextBox_Click);
             // 
-            // AddDateButton
+            // Btn_AddDate
             // 
-            this.AddDateButton.Location = new System.Drawing.Point(11, 90);
-            this.AddDateButton.Margin = new System.Windows.Forms.Padding(2);
-            this.AddDateButton.Name = "AddDateButton";
-            this.AddDateButton.Size = new System.Drawing.Size(88, 20);
-            this.AddDateButton.TabIndex = 2;
-            this.AddDateButton.Text = "add date";
-            this.AddDateButton.UseVisualStyleBackColor = true;
-            this.AddDateButton.Click += new System.EventHandler(this.AddDateButton_Click);
+            this.Btn_AddDate.Location = new System.Drawing.Point(12, 78);
+            this.Btn_AddDate.Margin = new System.Windows.Forms.Padding(2);
+            this.Btn_AddDate.Name = "Btn_AddDate";
+            this.Btn_AddDate.Size = new System.Drawing.Size(88, 20);
+            this.Btn_AddDate.TabIndex = 2;
+            this.Btn_AddDate.Text = "Add Date";
+            this.Btn_AddDate.UseVisualStyleBackColor = true;
+            this.Btn_AddDate.Click += new System.EventHandler(this.Btn_AddDate_Click);
             // 
-            // ConnectButton
+            // EventNameField
             // 
-            this.ConnectButton.Location = new System.Drawing.Point(11, 14);
-            this.ConnectButton.Name = "ConnectButton";
-            this.ConnectButton.Size = new System.Drawing.Size(75, 23);
-            this.ConnectButton.TabIndex = 3;
-            this.ConnectButton.Text = "Connect";
-            this.ConnectButton.UseVisualStyleBackColor = true;
-            this.ConnectButton.Click += new System.EventHandler(this.ConnectButton_Click);
+            this.EventNameField.ForeColor = System.Drawing.SystemColors.InactiveCaption;
+            this.EventNameField.Location = new System.Drawing.Point(12, 5);
+            this.EventNameField.Name = "EventNameField";
+            this.EventNameField.Size = new System.Drawing.Size(199, 20);
+            this.EventNameField.TabIndex = 3;
+            this.EventNameField.Text = "Event name";
+            this.EventNameField.Click += new System.EventHandler(this.EventNameField_Click);
             // 
-            // Form1
+            // Picker
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(234, 197);
-            this.Controls.Add(this.ConnectButton);
-            this.Controls.Add(this.AddDateButton);
+            this.ClientSize = new System.Drawing.Size(231, 113);
+            this.Controls.Add(this.EventNameField);
+            this.Controls.Add(this.Btn_AddDate);
             this.Controls.Add(this.NameTextBox);
             this.Controls.Add(this.DateTimePickerField);
-            this.Name = "Form1";
+            this.Name = "Picker";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -93,8 +94,8 @@
 
         private System.Windows.Forms.DateTimePicker DateTimePickerField;
         private System.Windows.Forms.TextBox NameTextBox;
-        private System.Windows.Forms.Button AddDateButton;
-        private System.Windows.Forms.Button ConnectButton;
+        private System.Windows.Forms.Button Btn_AddDate;
+        private System.Windows.Forms.TextBox EventNameField;
     }
 }
 
