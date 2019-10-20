@@ -18,5 +18,23 @@ namespace Server
             streamwriter.WriteLine(message);
             streamwriter.Flush();
         }
+
+        public static string ReadTextMessage(NetworkStream stream)
+        {
+            StreamReader streamreader = new StreamReader(stream, encoding);
+            try
+            {
+                return streamreader.ReadLine();
+
+            } catch(IOException e)
+            {
+                Console.WriteLine("User disconnected");
+            }
+
+            return "";
+         
+        }
     }
+
+
 }
