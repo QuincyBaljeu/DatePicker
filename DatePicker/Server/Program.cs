@@ -16,10 +16,6 @@ namespace Server
 
         static void Main(string[] args)
         {
-            /*
-             * Stijn is een pannenkoek
-             */
-
             IPAddress LocalHost;
             Events = new List<Event>();
 
@@ -35,11 +31,9 @@ namespace Server
                 Thread thread = new Thread(HandleClient);
                 thread.Start(client);
             }
-
         }
 
-
-
+        //Identify type of connected client
         public static void HandleClient(object obj)
         {
             TcpClient handledClient = obj as TcpClient;
@@ -72,6 +66,7 @@ namespace Server
 
         }
 
+        //Handle client of type "picker"
         public static void HandlePicker(object obj)
         {
             TcpClient HandledClient = obj as TcpClient;
@@ -102,21 +97,10 @@ namespace Server
             {
                 Console.WriteLine("No events found matching value");
             }
-
-
-            /*
-             foreach(Event e in Events)
-             {
-                 Console.WriteLine(e.EventName);
-                 Console.WriteLine(EventNamePicked);
-                 if (e.EventName == EventNamePicked){
-                     Console.WriteLine("godzijdank");
-                 }
-
-             }
-             */
         }
 
+
+        //Handle client of type "Event"
         public static void HandleEvent(object obj)
         {
             Console.WriteLine("Handling event");
@@ -134,6 +118,7 @@ namespace Server
             }
         }
 
+        //Handle client of type "info"
         public static void HandleInfo(object obj)
         {
             Console.WriteLine("Handling info");

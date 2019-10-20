@@ -12,6 +12,7 @@ namespace Server
     {
         public static Encoding encoding = Encoding.UTF8;
 
+        //Send message to stream
         public static void WriteTextMessage(NetworkStream stream, string message)
         {
             StreamWriter streamwriter = new StreamWriter(stream, encoding);
@@ -19,6 +20,7 @@ namespace Server
             streamwriter.Flush();
         }
 
+        //read message from stream
         public static string ReadTextMessage(NetworkStream stream)
         {
             StreamReader streamreader = new StreamReader(stream, encoding);
@@ -31,8 +33,7 @@ namespace Server
                 Console.WriteLine("User disconnected");
             }
 
-            return "";
-         
+            return "";        
         }
     }
 
