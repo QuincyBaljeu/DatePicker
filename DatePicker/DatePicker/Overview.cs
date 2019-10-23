@@ -52,7 +52,6 @@ namespace DatePicker
             save.FileName = "DefaultOutputName.txt";
 
             if (save.ShowDialog() == DialogResult.OK)
-
             {
                 StreamWriter writer = new StreamWriter(save.OpenFile());
                 writer.WriteLine(Data);
@@ -60,6 +59,10 @@ namespace DatePicker
                 writer.Close();
             }
 
+            Login login = new Login();
+            login.Show();
+
+            
         }
         
     }
